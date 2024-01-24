@@ -1,0 +1,77 @@
+
+.section-title h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    color: #000;
+    letter-spacing: 0.3px;
+    padding: 0;
+}
+
+.section-title::after {
+    content: "";
+    height: 3px;
+    background: #d6a4de;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/****************/
+/*	 BX-SLIDER 	*/
+/****************/
+
+section.client {
+    padding: 7em 4em;
+    background-color: #ffffff;
+}
+
+section.client .section-title {
+    margin-bottom: 6em;
+}
+
+.carousel-client {
+    display: flex; /* Use flexbox to make the images align horizontally */
+    justify-content: space-around; /* Optional: Adjust the spacing between images */
+}
+
+.carousel-client .slide {
+    flex: 0 0 auto; /* Ensure that the images won't grow or shrink */
+}
+
+.carousel-client img {
+    max-width: 100%; /* Ensure images don't exceed their container width */
+}
+
+.bx-controls {
+    position: relative;
+}
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

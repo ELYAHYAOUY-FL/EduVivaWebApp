@@ -1,0 +1,39 @@
+
+<form action="">
+    <div class="mb-3">
+        <label for="service" class="form-label">Add a Service</label>
+        <input type="text" [(ngModel)]="servicename" [ngModelOptions]="{standalone: true}" class="form-control" id="servicename" name="servicename" placeholder="Service name" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4" (click)="save()">Save</button>
+</form>
+<div>
+ 
+  <div class="container mt-4" >
+
+      <h1>Services list</h1>
+  <table  class="table center-table">
+      <thead>     
+      <tr>
+          
+          <th scope="col" style="border-top-left-radius: 10px ; text-align: center;">Name</th>
+          <th scope="col" style="border-top-right-radius: 10px  ; text-align: center;">Option</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let ServicetItem of ServicetArray">
+        
+          <td style="text-align: center;">{{ServicetItem.name}}</td>
+        
+          <td>
+            <button type="button" class="btn btn-success" (click)="setUpdate(ServicetItem)" style="margin-left:90px;">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="setDelete(ServicetItem)" style="margin-left:20px;">Delete</button>
+        </td>
+         
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+  </div>

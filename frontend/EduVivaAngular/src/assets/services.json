@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "serviceId":1,
+            "serviceName":"Food"
+        },
+        {
+            "serviceId":2,
+            "serviceName":"Clothes"
+        },
+        {
+            "serviceId":3,
+            "serviceName":"Medical"
+        },
+        {
+            "serviceId":4,
+            "serviceName":"Tranport"
+        }
+
+    ]
+}

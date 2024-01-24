@@ -1,0 +1,141 @@
+.about_section {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+}
+
+.about_taital {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.about_text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.readmore_bt a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.readmore_bt a:hover {
+    background-color: #2980b9;
+}
+
+.about_img img {
+    width: 100%;
+    border-radius: 5px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+#about-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 12%;
+}
+.about-left img{
+    width: 420px;
+    height: auto;
+    transform: translateY(50px);
+    vertical-align: middle;
+    
+}
+.about-right {
+    width: 54%;
+    display: inline-block;
+  vertical-align: middle;
+  margin-top: 100px; /* Adjust the margin-top value as needed */
+  padding-top: 100px; /* Adjust the padding-top value as needed */
+}
+.about-left,
+.about-right {
+  margin-top: 5px; /* Adjust the margin as needed */
+}
+.about-right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.about-right h1 {
+    color:  rgb(101, 101, 212);
+    font-size: 37px;
+    margin-bottom: 5px;
+}
+
+.about-right p {
+    color: #444;
+    line-height: 26px;
+    font-size: 15px;
+}
+
+.about-right .address {
+    margin: 25px 0;
+}
+
+.about-right .address ul li {
+    margin-bottom: 5px;
+}
+
+.address .address-logo {
+    margin-right: 15px;
+    color: rgb(101, 101, 212);
+}
+
+.address .saprater {
+    margin: 0 35px;
+}
+
+.about-right .expertise ul {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+  }
+/* Add this to your about.component.css or your main styles file */
+
+button {
+    background-color: rgb(101, 101, 212); /* Change the background color as needed */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  
+    /* Add any additional styles or hover effects */
+  }
+  
+  button:hover {
+    background-color: rgb(101, 101, 212); /* Change the hover background color */
+  }
+  /* Import Font Awesome CSS directly in your CSS file */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+/* Your other CSS styles */
+
+.social-media-icons i {
+  font-size: 24px; /* Adjust the size as needed */
+  margin-right: 30px; /* Adjust the spacing between icons */
+
+}
+
+/* Your other CSS styles */

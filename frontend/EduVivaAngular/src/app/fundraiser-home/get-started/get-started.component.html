@@ -1,0 +1,117 @@
+
+    <div class="form-container">
+        <h2>Company Registration</h2>
+        <form action="">
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" name="companyName" required [(ngModel)]="companyName">
+            </div>
+            <div class="form-group companyImage" >
+                <label for="companyImage">Company Image</label>
+                <input type="file" id="companyImage" name="companyImage" (change)="onFileSelected($event)" accept="image/*">
+             </div>
+             
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required [(ngModel)]="companyEmail">
+            </div>
+            <div class="form-group">
+                <label for="short_description">Short Description</label>
+                <input type="text" id="short_description" name="short_description" required [(ngModel)]="companyShort_Description">
+            </div>
+            <!--
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input id="description" name="description"  required [(ngModel)]="companyDescription"> 
+            </div>  
+            -->
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required [(ngModel)]="companyPhone">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required [(ngModel)]="companyCity">
+            </div>
+            <div >
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required [(ngModel)]="companyAddress">
+            </div >
+            <div class="form-control">
+                <label for="address">Service</label>
+            <select  id="services" name="services" [(ngModel)]="selectedServices" (focus)="showServicesOptions = true" (blur)="showServicesOptions = false" multiple required>
+                <option value="" disabled selected>-- Choose a service --</option>
+                <ng-container *ngIf="showServicesOptions">
+                    <option *ngFor="let service of services" [value]="service.id">
+                     {{ service.name }}
+                    </option>
+                </ng-container>
+            </select>
+                        
+            </div>
+           
+              
+            <button type="submit" class="btn btn-primary mt-4" (click)="save()">Create Company</button>
+        </form>
+    </div>
+
+
+    <div class="container mt-4" >
+
+        <h1>Companies list</h1>
+    <table class="table center-table" >
+        <thead>     
+        <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Email</th>
+            <th scope="col">Description</th>
+            <th scope="col">Phone</th>
+            <th scope="col">City</th>
+            <th scope="col">Services</th>
+            <th scope="col" >Option</th>
+           
+          
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let CompanyItem of CompanyArray">
+          
+            <td>{{CompanyItem.companyname}}</td>
+            <td>
+                <ng-container *ngIf="CompanyItem.companyImage">
+                    <img [src]="CompanyItem.companyImage" alt="Company Image" width="50" height="50">
+                </ng-container>
+                <ng-container *ngIf="!CompanyItem.companyImage">
+                    No Image
+                </ng-container>
+            </td>
+            <td>{{CompanyItem.email}}</td>
+            <td>{{CompanyItem.short_description}}</td>
+            <td>{{CompanyItem.phone}}</td>
+            <td>{{CompanyItem.city}}</td>
+            <td>
+                <ng-container *ngIf="CompanyItem.services && CompanyItem.services.length > 0">
+                    {{ getServicesNames(CompanyItem.services) }}
+                </ng-container>
+                <ng-container *ngIf="!CompanyItem.services || CompanyItem.services.length === 0">
+                    No services
+                </ng-container>
+               
+            </td>
+
+
+          
+            <td class="option-column">
+            <button type="button" class="btn btn-success" (click)="setUpdate(CompanyItem)">Edit</button>
+          </td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+  
+  
+    </div>

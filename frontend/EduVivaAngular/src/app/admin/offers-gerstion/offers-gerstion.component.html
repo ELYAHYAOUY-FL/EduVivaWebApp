@@ -1,0 +1,50 @@
+<!-- offer.component.html -->
+<div class="container">
+  <div *ngFor="let offer of offers">
+    <div *ngFor="let company of offer.companies" class="card">
+      <div class="card-header">
+        <img [src]="company.companyImage" alt="Company Image" />
+      </div>
+      <div class="card-body">
+        <h4>{{ company.companyname }}</h4>
+        <p>{{ company.short_description }}</p>
+        <div class="offers">
+          <h5>Available Offers</h5>
+          <h6>{{ offer.title }}</h6>
+          <span class="tag tag-purple">{{ offer.dateStart }} - {{ offer.dateFin }}</span>
+        </div><br>
+        <button class="more-details-button" (click)="showDetails(company)">Show more details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show details section -->
+  <div *ngIf="showCompanyDetails" id="about-section">
+    <div class="about-left">
+      <img [src]="selectedCompany.companyImage" alt="Company Image" />
+    </div>
+    <div class="about-right">
+      <h1>{{ selectedCompany.companyname }}</h1>
+      <p>{{ selectedCompany.email }}</p>
+      <p>{{ selectedCompany.city }}</p>
+      <p>{{ selectedCompany.address }}</p>
+      <p>{{ selectedCompany.short_description }}</p>
+      <div *ngFor="let offer of offers">
+        <!-- Call the findCompanyInOffer method to get the matching company -->
+        <ng-container *ngIf="findCompanyInOffer(offer)">
+          <!-- Display the description of the offer for the selected company -->
+          <p>{{ offer.description }}</p>
+        </ng-container>
+      </div>
+      <h4>Services</h4>
+      <ng-container *ngIf="selectedCompany.services && selectedCompany.services.length > 0">
+        <ul>
+          <li>{{ getServicesNames(selectedCompany.services) }}</li>
+        </ul>
+      </ng-container>
+      <ng-container *ngIf="!selectedCompany.services || selectedCompany.services.length === 0">
+        No services
+      </ng-container>
+    </div>
+  </div>
+</div>

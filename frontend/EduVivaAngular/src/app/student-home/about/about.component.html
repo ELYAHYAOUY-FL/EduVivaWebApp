@@ -1,0 +1,27 @@
+<section id="about-section">
+    <!-- about left  -->
+    <div class="about-left">
+      <img src="assets/images/Charity-rafiki.png" alt="About Img"/>
+    </div>
+  
+    <!-- about right  -->
+    <div class="about-right">
+      <h1>About Us</h1>
+      <p>
+        Welcome to EduViva, where education transforms lives! At EduViva, we believe in the power of education to create lasting change and empower individuals to reach their full potential. By supporting EduViva, you are contributing to a brighter future for students around the world. Your generous donation enables us to provide educational resources, scholarships, and opportunities to those in need. Together, we can break down barriers to education and create a world where everyone has the chance to thrive. Join us on this journey of empowerment and make a difference in the lives of students today.
+      </p>
+      <p *ngIf="showExtendedContent">
+        Your contribution, no matter the size, plays a vital role in building a better tomorrow. Thank you for being a part of the EduViva community and for helping us make education accessible to all.
+      </p>
+      <button (click)="toggleReadMore()">Read {{ showExtendedContent ? 'Less' : 'More' }}</button>
+        <!-- Social Media Icons -->
+        <div class="social-media-icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div> 
+  
+      <div class="address">
+        <!-- Address details here -->
+      </div>
+

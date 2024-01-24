@@ -1,0 +1,58 @@
+
+<div class="container mt-4" >
+
+    <h1>Companies list</h1>
+<table class="table center-table" >
+    <thead>     
+    <tr>
+        
+        <th scope="col" style="border-top-left-radius: 10px ">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">City</th>
+        <th scope="col">Services</th>
+        <th scope="col" class="option-column" style="border-top-right-radius: 10px ">Option</th>
+       
+      
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let CompanyItem of CompanyArray">
+      
+        <td>{{CompanyItem.companyname}}</td>
+        <td>
+            <ng-container *ngIf="CompanyItem.companyImage">
+                <img [src]="CompanyItem.companyImage" alt="Company Image" width="50" height="50">
+            </ng-container>
+            <ng-container *ngIf="!CompanyItem.companyImage">
+                No Image
+            </ng-container>
+        </td>
+        <td>{{CompanyItem.email}}</td>
+        <td>{{CompanyItem.phone}}</td>
+        <td>{{CompanyItem.city}}</td>
+        <td>
+            <ng-container *ngIf="CompanyItem.services && CompanyItem.services.length > 0">
+                {{ getServicesNames(CompanyItem.services) }}
+            </ng-container>
+            <ng-container *ngIf="!CompanyItem.services || CompanyItem.services.length === 0">
+                No services
+            </ng-container>
+           
+        </td>
+
+
+      
+        <td>
+       
+        <button type="button" class="btn btn-danger" (click)="setDelete(CompanyItem)">Delete</button>
+      </td>
+       
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</div>

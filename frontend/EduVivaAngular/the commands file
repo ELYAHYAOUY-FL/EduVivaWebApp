@@ -1,0 +1,4 @@
+npm install
+npm install bootstrap
+npm install @angular/material @angular/cdk
+npm install tslib
